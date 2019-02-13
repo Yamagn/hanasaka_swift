@@ -1,0 +1,6 @@
+framework module Pods_hanasaka_timesTests {
+  umbrella header "Pods-hanasaka_timesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
