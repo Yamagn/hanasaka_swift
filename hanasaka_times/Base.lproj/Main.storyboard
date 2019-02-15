@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vCy-co-NsU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--はなさかマップ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GMViewController" customModule="hanasaka_times" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,9 +20,69 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="はなさかマップ" id="DRe-2e-b7d">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sGO-fE-yCh">
+                            <connections>
+                                <segue destination="TAz-pM-4EA" kind="presentation" id="4ZW-Y1-rgg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1932" y="26.53673163418291"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="ZV3-sC-MdD">
+            <objects>
+                <viewController id="TAz-pM-4EA" customClass="addViewController" customModule="hanasaka_times" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y5h-mn-FI0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-Ab-vRO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="開花情報の投稿" id="BBM-ad-b0f">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="EJ5-hC-qch">
+                                            <connections>
+                                                <action selector="closeView:" destination="TAz-pM-4EA" id="MKO-Yp-SOV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mqu-Ab-vRO" firstAttribute="top" secondItem="q1c-2m-pfT" secondAttribute="top" id="Qbd-eA-g4v"/>
+                            <constraint firstAttribute="trailing" secondItem="mqu-Ab-vRO" secondAttribute="trailing" id="UVu-8F-2lV"/>
+                            <constraint firstItem="mqu-Ab-vRO" firstAttribute="leading" secondItem="Y5h-mn-FI0" secondAttribute="leading" id="dmz-V9-Keh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q1c-2m-pfT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yqd-A1-b0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.5999999999999" y="27.436281859070466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3ls-3m-3wb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCy-co-NsU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oF4-tT-uox">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dcL-4c-j2G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zus-fQ-wFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

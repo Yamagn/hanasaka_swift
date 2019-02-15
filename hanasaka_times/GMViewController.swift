@@ -33,9 +33,7 @@ class GMViewController: UIViewController {
         
         self.view.addSubview(gm)
         
-
     }
-    
 
     /*
     // MARK: - Navigation
