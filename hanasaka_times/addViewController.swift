@@ -10,18 +10,21 @@ import UIKit
 
 class addViewController: UIViewController {
 
+    @IBOutlet weak var placeText: UITextField!
+    @IBOutlet weak var tagText: UITextField!
+    @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var pickButton: UIButton!
+    @IBOutlet weak var postButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setNeedsStatusBarAppearanceUpdate()
+        postButton.isHidden = true
+        photoImage.isHidden = true
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return false
+    @IBAction func photoPick(_ sender: Any) {
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
+    @IBAction func post(_ sender: Any) {
     }
     
     @IBAction func closeView(_ sender: Any) {

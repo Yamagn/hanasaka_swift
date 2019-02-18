@@ -42,6 +42,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqu-Ab-vRO">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="開花情報の投稿" id="BBM-ad-b0f">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="EJ5-hC-qch">
@@ -52,15 +53,86 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="場所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB5-58-ASS">
+                                <rect key="frame" x="44" y="106" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LOw-gR-02g">
+                                <rect key="frame" x="67" y="144" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タグ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32h-mk-Q7n">
+                                <rect key="frame" x="44" y="226" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cp8-ye-Rf8">
+                                <rect key="frame" x="67" y="264" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mv-bB-Zd4">
+                                <rect key="frame" x="67" y="329" width="240" height="141"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJb-Ft-rLv">
+                                <rect key="frame" x="142" y="314" width="91" height="30"/>
+                                <state key="normal" title="写真を撮る"/>
+                                <connections>
+                                    <action selector="photoPick:" destination="TAz-pM-4EA" eventType="touchUpInside" id="lUl-ep-Wnt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5Y-A7-Zge">
+                                <rect key="frame" x="156" y="507" width="62" height="30"/>
+                                <state key="normal" title="投稿する"/>
+                                <connections>
+                                    <action selector="post:" destination="TAz-pM-4EA" eventType="touchUpInside" id="Adh-1O-zb4"/>
+                                    <action selector="postButton:" destination="TAz-pM-4EA" eventType="touchUpInside" id="kyj-SK-Ufo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cB5-58-ASS" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="44" id="2u9-C5-iHs"/>
+                            <constraint firstItem="32h-mk-Q7n" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="44" id="65V-Fb-VA7"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="n5Y-A7-Zge" secondAttribute="trailing" constant="157" id="8Rq-fr-xzg"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="cB5-58-ASS" secondAttribute="trailing" constant="296" id="9cH-qS-SOf"/>
+                            <constraint firstItem="9mv-bB-Zd4" firstAttribute="top" secondItem="Cp8-ye-Rf8" secondAttribute="bottom" constant="35" id="BHp-T9-MsU"/>
+                            <constraint firstItem="32h-mk-Q7n" firstAttribute="top" secondItem="LOw-gR-02g" secondAttribute="bottom" constant="52" id="Fab-Jf-1A7"/>
+                            <constraint firstItem="BJb-Ft-rLv" firstAttribute="top" secondItem="Cp8-ye-Rf8" secondAttribute="bottom" constant="20" id="Ldk-yF-7n9"/>
                             <constraint firstItem="mqu-Ab-vRO" firstAttribute="top" secondItem="q1c-2m-pfT" secondAttribute="top" id="Qbd-eA-g4v"/>
+                            <constraint firstItem="LOw-gR-02g" firstAttribute="top" secondItem="cB5-58-ASS" secondAttribute="bottom" constant="17" id="Qg7-qh-93u"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="Cp8-ye-Rf8" secondAttribute="trailing" constant="68" id="R43-PW-r8Z"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="bottom" secondItem="n5Y-A7-Zge" secondAttribute="bottom" constant="130" id="SI0-IE-rQX"/>
+                            <constraint firstItem="n5Y-A7-Zge" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="156" id="Tn5-Xz-BgM"/>
+                            <constraint firstItem="cB5-58-ASS" firstAttribute="top" secondItem="mqu-Ab-vRO" secondAttribute="bottom" constant="42" id="Ttl-Nb-49T"/>
                             <constraint firstAttribute="trailing" secondItem="mqu-Ab-vRO" secondAttribute="trailing" id="UVu-8F-2lV"/>
+                            <constraint firstItem="BJb-Ft-rLv" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="142" id="XKe-fr-4HP"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="BJb-Ft-rLv" secondAttribute="trailing" constant="142" id="a1g-xY-6Mv"/>
                             <constraint firstItem="mqu-Ab-vRO" firstAttribute="leading" secondItem="Y5h-mn-FI0" secondAttribute="leading" id="dmz-V9-Keh"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="LOw-gR-02g" secondAttribute="trailing" constant="68" id="fNB-bC-lrf"/>
+                            <constraint firstItem="9mv-bB-Zd4" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="67" id="foe-Lm-rzg"/>
+                            <constraint firstItem="n5Y-A7-Zge" firstAttribute="top" secondItem="9mv-bB-Zd4" secondAttribute="bottom" constant="37" id="ge9-Xy-GHc"/>
+                            <constraint firstItem="Cp8-ye-Rf8" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="67" id="gkG-F2-ewb"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="9mv-bB-Zd4" secondAttribute="trailing" constant="68" id="kgl-lH-5Fq"/>
+                            <constraint firstItem="q1c-2m-pfT" firstAttribute="trailing" secondItem="32h-mk-Q7n" secondAttribute="trailing" constant="296" id="l2v-we-1dW"/>
+                            <constraint firstItem="Cp8-ye-Rf8" firstAttribute="top" secondItem="32h-mk-Q7n" secondAttribute="bottom" constant="17" id="mjg-ed-qAj"/>
+                            <constraint firstItem="LOw-gR-02g" firstAttribute="leading" secondItem="q1c-2m-pfT" secondAttribute="leading" constant="67" id="o3e-Gb-I2N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q1c-2m-pfT"/>
                     </view>
+                    <connections>
+                        <outlet property="photoImage" destination="9mv-bB-Zd4" id="rDx-xQ-XZg"/>
+                        <outlet property="pickButton" destination="BJb-Ft-rLv" id="kgD-4A-nDf"/>
+                        <outlet property="placeText" destination="LOw-gR-02g" id="qfr-Xx-k7I"/>
+                        <outlet property="postButton" destination="n5Y-A7-Zge" id="NQo-1o-ngg"/>
+                        <outlet property="tagText" destination="Cp8-ye-Rf8" id="YK8-Hk-gB9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqd-A1-b0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
