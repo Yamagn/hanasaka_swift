@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addViewController: UIViewController {
+class addViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var placeText: UITextField!
     @IBOutlet weak var tagText: UITextField!
@@ -22,6 +22,25 @@ class addViewController: UIViewController {
     }
     
     @IBAction func photoPick(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.sourceType = .camera
+            imagePickerController.delegate = self
+            present(imagePickerController, animated: true, completion: nil)
+        } else {
+            let controller = UIAlertController(title: "カメラにアクセスできません", message: "[設定] → [プライバシー]からカメラのアクセスを許可してください", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(controller, animated: true, completion: nil)
+            return
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        pickButton.isHidden = true
+        photoImage.isHidden = false
+        photoImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        postButton.isHidden = false
+        picker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func post(_ sender: Any) {
