@@ -16,6 +16,7 @@
 		07A0E11C21E718A000D596E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A0E11A21E718A000D596E4 /* LaunchScreen.storyboard */; };
 		07A0E12721E718A000D596E4 /* hanasaka_timesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0E12621E718A000D596E4 /* hanasaka_timesTests.swift */; };
 		07A0E13221E718A000D596E4 /* hanasaka_timesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0E13121E718A000D596E4 /* hanasaka_timesUITests.swift */; };
+		07E12A68221CD466005BEE25 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E12A67221CD466005BEE25 /* detailViewController.swift */; };
 		1BE1BD325BAB333C3B83F90E /* Pods_hanasaka_times.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F327F333A508AC7551829A2 /* Pods_hanasaka_times.framework */; };
 		2677DCDBEFB8B20D10993347 /* Pods_hanasaka_timesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90466C170F2CBF55AEBF637 /* Pods_hanasaka_timesTests.framework */; };
 		51EC91759C69447A361A4967 /* Pods_hanasaka_timesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47042F3DBD0CD8DFCC82ECAD /* Pods_hanasaka_timesUITests.framework */; };
@@ -54,6 +55,7 @@
 		07A0E12D21E718A000D596E4 /* hanasaka_timesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hanasaka_timesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A0E13121E718A000D596E4 /* hanasaka_timesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hanasaka_timesUITests.swift; sourceTree = "<group>"; };
 		07A0E13321E718A000D596E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07E12A67221CD466005BEE25 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		1F327F333A508AC7551829A2 /* Pods_hanasaka_times.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hanasaka_times.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1A28967100B17C77C16089 /* Pods-hanasaka_timesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hanasaka_timesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hanasaka_timesTests/Pods-hanasaka_timesTests.release.xcconfig"; sourceTree = "<group>"; };
 		47042F3DBD0CD8DFCC82ECAD /* Pods_hanasaka_timesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hanasaka_timesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				0709E90C22143D9400B7FCC8 /* Keys.swift */,
 				0709E91022143E9100B7FCC8 /* GMViewController.swift */,
 				078668F32216CB9000596632 /* addViewController.swift */,
+				07E12A67221CD466005BEE25 /* detailViewController.swift */,
 			);
 			path = hanasaka_times;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				0709E91122143E9100B7FCC8 /* GMViewController.swift in Sources */,
 				0709E90D22143D9400B7FCC8 /* Keys.swift in Sources */,
 				078668F42216CB9000596632 /* addViewController.swift in Sources */,
+				07E12A68221CD466005BEE25 /* detailViewController.swift in Sources */,
 				07A0E11221E7189E00D596E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
