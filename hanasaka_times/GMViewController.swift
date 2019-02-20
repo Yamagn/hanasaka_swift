@@ -17,8 +17,17 @@ class GMViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerD
 
     var initView : Bool = false
     
-    let latitude: CLLocationDegrees = 36.5780574
-    let longitude: CLLocationDegrees = 136.6486596
+    struct latlng {
+        var name : String
+        var tag : String?
+        var lat : Double
+        var lng : Double
+    }
+    
+    let places : [latlng] = [latlng.init(name : "岐阜工業高等専門学校", tag : "高専", lat: 35.446733, lng: 136.672408),
+                             latlng.init(name : "豊田工業高等専門学校", tag : "高専", lat: 35.103611, lng: 137.148183),
+                             latlng.init(name : "沼津工業高等専門学校", tag : "高専", lat: 35.135944, lng: 138.884278),
+                             latlng.init(name: "鳥羽商船高等専門学校", tag: "高専", lat: 34.482228, lng: 136.82485)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +37,13 @@ class GMViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerD
         googlemap.settings.compassButton = true
         googlemap.settings.myLocationButton = true
         googlemap.delegate = self
-//        let marker : GMSMarker = GMSMarker()
-//        marker.position = CLLocationCoordinate2DMake(latitude, longitude)
-//        marker.map = googlemap
+        for p in places {
+            let marker : GMSMarker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(p.lat, p.lng)
+            marker.title = p.name
+            marker.snippet = p.tag
+            marker.map = googlemap
+        }
         self.view.addSubview(googlemap)
         
         locationManager = CLLocationManager()
