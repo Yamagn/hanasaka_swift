@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0709E90D22143D9400B7FCC8 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E90C22143D9400B7FCC8 /* Keys.swift */; };
 		0709E91122143E9100B7FCC8 /* GMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709E91022143E9100B7FCC8 /* GMViewController.swift */; };
+		075F0C82221D72730095C4EA /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 075F0C81221D72730095C4EA /* Twitter.png */; };
 		078668F42216CB9000596632 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078668F32216CB9000596632 /* addViewController.swift */; };
 		07A0E11221E7189E00D596E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0E11121E7189E00D596E4 /* AppDelegate.swift */; };
 		07A0E11721E7189E00D596E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A0E11521E7189E00D596E4 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0709E90C22143D9400B7FCC8 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		0709E91022143E9100B7FCC8 /* GMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMViewController.swift; sourceTree = "<group>"; };
+		075F0C81221D72730095C4EA /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Twitter.png; path = "../../../Downloads/Twitter Social Icons/Twitter Social Icons/Twitter_SocialIcon_RoundedSquare/Twitter.png"; sourceTree = "<group>"; };
 		078668F32216CB9000596632 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		07A0E10E21E7189E00D596E4 /* hanasaka_times.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hanasaka_times.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A0E11121E7189E00D596E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				07A0E11121E7189E00D596E4 /* AppDelegate.swift */,
+				075F0C81221D72730095C4EA /* Twitter.png */,
 				07A0E11521E7189E00D596E4 /* Main.storyboard */,
 				07A0E11821E718A000D596E4 /* Assets.xcassets */,
 				07A0E11A21E718A000D596E4 /* LaunchScreen.storyboard */,
@@ -284,6 +287,7 @@
 			files = (
 				07A0E11C21E718A000D596E4 /* LaunchScreen.storyboard in Resources */,
 				07A0E11921E718A000D596E4 /* Assets.xcassets in Resources */,
+				075F0C82221D72730095C4EA /* Twitter.png in Resources */,
 				07A0E11721E7189E00D596E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

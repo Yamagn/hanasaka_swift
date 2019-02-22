@@ -42,13 +42,76 @@
                     <view key="view" contentMode="scaleToFill" id="6yK-hj-J0g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDm-y1-hY6">
+                                <rect key="frame" x="16" y="93" width="343" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="o3E-iR-Pg6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xB1-76-x1Y">
+                                <rect key="frame" x="16" y="327" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RwG-d8-ijJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8S7-36-vxf">
+                                <rect key="frame" x="16" y="395" width="343" height="74"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="景色をシェアする" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJT-Lq-2wX">
+                                <rect key="frame" x="16" y="516" width="282" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYo-kZ-EBv">
+                                <rect key="frame" x="299" y="516" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KA4-YD-m20"/>
+                                    <constraint firstAttribute="width" constant="60" id="sev-j3-0PF"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Twitter.png"/>
+                                <connections>
+                                    <action selector="shareTwitter:" destination="Mda-21-6eo" eventType="touchUpInside" id="YRG-ax-220"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VDm-y1-hY6" firstAttribute="top" secondItem="dnx-dj-gWh" secondAttribute="top" constant="29" id="5ID-gk-psh"/>
+                            <constraint firstItem="xB1-76-x1Y" firstAttribute="top" secondItem="VDm-y1-hY6" secondAttribute="bottom" constant="22" id="APZ-cX-eXo"/>
+                            <constraint firstItem="iJT-Lq-2wX" firstAttribute="top" secondItem="8S7-36-vxf" secondAttribute="bottom" constant="47" id="Alt-Vu-Tta"/>
+                            <constraint firstItem="xB1-76-x1Y" firstAttribute="leading" secondItem="dnx-dj-gWh" secondAttribute="leading" constant="16" id="DHX-Vf-ma8"/>
+                            <constraint firstItem="FYo-kZ-EBv" firstAttribute="leading" secondItem="iJT-Lq-2wX" secondAttribute="trailing" constant="1" id="DlB-oh-SxF"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="trailing" secondItem="FYo-kZ-EBv" secondAttribute="trailing" constant="16" id="EfF-yM-pG5"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="trailing" secondItem="xB1-76-x1Y" secondAttribute="trailing" constant="16" id="HR4-c7-mP2"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="bottom" secondItem="FYo-kZ-EBv" secondAttribute="bottom" constant="91" id="PpW-Aw-JMB"/>
+                            <constraint firstItem="iJT-Lq-2wX" firstAttribute="leading" secondItem="dnx-dj-gWh" secondAttribute="leading" constant="16" id="Z4v-cF-eB4"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="bottom" secondItem="8S7-36-vxf" secondAttribute="bottom" constant="198" id="b7P-2o-05m"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="trailing" secondItem="8S7-36-vxf" secondAttribute="trailing" constant="16" id="cY6-hs-W8q"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="bottom" secondItem="iJT-Lq-2wX" secondAttribute="bottom" constant="98" id="fRC-N1-yOW"/>
+                            <constraint firstItem="VDm-y1-hY6" firstAttribute="leading" secondItem="dnx-dj-gWh" secondAttribute="leading" constant="16" id="jh6-KA-wZh"/>
+                            <constraint firstItem="8S7-36-vxf" firstAttribute="top" secondItem="xB1-76-x1Y" secondAttribute="bottom" constant="8" id="om3-44-VEY"/>
+                            <constraint firstItem="FYo-kZ-EBv" firstAttribute="top" secondItem="8S7-36-vxf" secondAttribute="bottom" constant="47" id="q3g-8b-Jui"/>
+                            <constraint firstItem="8S7-36-vxf" firstAttribute="leading" secondItem="dnx-dj-gWh" secondAttribute="leading" constant="16" id="sc6-qP-mV7"/>
+                            <constraint firstItem="dnx-dj-gWh" firstAttribute="trailing" secondItem="VDm-y1-hY6" secondAttribute="trailing" constant="16" id="wd9-Vi-fTp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dnx-dj-gWh"/>
                     </view>
+                    <connections>
+                        <outlet property="flowerImage" destination="VDm-y1-hY6" id="quQ-Rm-zqA"/>
+                        <outlet property="placeName" destination="xB1-76-x1Y" id="a54-Bl-QO7"/>
+                        <outlet property="tagStack" destination="8S7-36-vxf" id="M6j-nP-Enz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgF-V3-2YD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="732"/>
+            <point key="canvasLocation" x="1925.5999999999999" y="731.78410794602701"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="ZV3-sC-MdD">
@@ -175,4 +238,7 @@
             <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter.png" width="400" height="400"/>
+    </resources>
 </document>

@@ -11,23 +11,37 @@ import GoogleMaps
 
 class detailViewController: UIViewController {
 
-    var markerInfo : GMSMarker? = nil
+    var markerInfo : Place? = nil
+    
+    @IBOutlet weak var flowerImage: UIImageView!
+    @IBOutlet weak var placeName: UILabel!
+    @IBOutlet weak var tagStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let place = markerInfo else {
+            return
+        }
+        
+        flowerImage.setImage(fromUrl: place.imageURL)
+        placeName.text = place.name
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func shareTwitter(_ sender: Any) {
+        
     }
-    */
+}
 
+extension UIImageView {
+    public func setImage(fromUrl url: String) {
+        URLSession.shared.dataTask(with: URLRequest(url: URL(string: url)!)) {(data, response, error) in
+            guard let data = data, let _ = response, error == nil else {
+                return
+            }
+            DispatchQueue.main.async(execute: {
+                self.image = UIImage(data: data)
+            })
+            }.resume()
+    }
 }
