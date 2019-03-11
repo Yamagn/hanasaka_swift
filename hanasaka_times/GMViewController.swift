@@ -9,12 +9,11 @@
 import UIKit
 import GoogleMaps
 
-struct Place {
-    var name : String
-    var tags : [String]
-    var lat : Double
-    var lng : Double
-    var imageURL : String
+struct Place: Decodable {
+    let place_name: String
+    let latitude: Double
+    let longitude: Double
+    let plants: [String]
 }
 
 class GMViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
@@ -24,12 +23,11 @@ class GMViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerD
     var currentLocation : CLLocation?
     var place : Place?
 
+    var _places : [Place]?
+
     var initView : Bool = false
     
-    let places : [Place] = [Place.init(name : "岐阜工業高等専門学校", tags : ["高専"], lat: 35.446733, lng: 136.672408, imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/%E6%AD%A3%E9%9D%A2%E7%8E%84%E9%96%A2%E4%BB%98%E8%BF%91%E3%81%8B%E3%82%89%E3%81%AE%E7%9C%BA%E3%82%81.JPG/440px-%E6%AD%A3%E9%9D%A2%E7%8E%84%E9%96%A2%E4%BB%98%E8%BF%91%E3%81%8B%E3%82%89%E3%81%AE%E7%9C%BA%E3%82%81.JPG"),
-                             Place.init(name : "豊田工業高等専門学校", tags : ["高専", "動物園"], lat: 35.103611, lng: 137.148183, imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Toyota_National_College_of_Technology.jpg/440px-Toyota_National_College_of_Technology.jpg"),
-                             Place.init(name : "沼津工業高等専門学校", tags : ["高専"], lat: 35.135944, lng: 138.884278, imageURL: "http://www.denshi.numazu-ct.ac.jp/top_photo3.jpg"),
-                             Place.init(name: "鳥羽商船高等専門学校", tags:  ["高専"], lat: 34.482228, lng: 136.82485, imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Toba_Shosen.jpg/440px-Toba_Shosen.jpg")]
+    let session = URLSession(configuration: .default)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +37,22 @@ class GMViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerD
         googlemap.settings.compassButton = true
         googlemap.settings.myLocationButton = true
         googlemap.delegate = self
+        let lat = googlemap.myLocation?.coordinate.latitude
+        let long = googlemap.myLocation?.coordinate.longitude
+        print("latitude:", lat)
+        print("longitude:", long)
+        let places: [Place] = getPlaces(lat: lat!, long: long!)
+        _places = places
+        print("places:", places)
         for p in places {
             let marker : GMSMarker = GMSMarker()
             var str = ""
-            for tag in p.tags {
+            for tag in p.plants {
                 str = str + tag + " "
             }
             marker.snippet = str
-            marker.position = CLLocationCoordinate2DMake(p.lat, p.lng)
-            marker.title = p.name
+            marker.position = CLLocationCoordinate2DMake(p.latitude, p.longitude)
+            marker.title = p.place_name
             
             marker.map = googlemap
         }
@@ -82,11 +87,24 @@ class GMViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerD
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        for i in places {
-            if i.lat == marker.position.latitude && i.lng == marker.position.longitude {
+        for i in _places! {
+            if i.latitude == marker.position.latitude && i.longitude == marker.position.longitude {
                 place = i
             }
         }
         performSegue(withIdentifier: "showDetail", sender: nil)
+    }
+    
+    func getPlaces(lat: Double, long: Double) -> [Place]{
+        let url = URL(string: "ichigo.work:81/places/\(lat)/\(long)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        let session = HttpClientImpl()
+        let (data, _, _) = session.execute(request: request)
+        guard let jsonData = data else {
+            return []
+        }
+        return try! JSONDecoder().decode([Place].self, from: jsonData as Data)
+        
     }
 }
